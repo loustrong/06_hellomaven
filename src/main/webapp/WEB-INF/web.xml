@@ -10,6 +10,58 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
-  
+  <servlet>
+    <servlet-name>GetApplication</servlet-name>
+    <servlet-class>lee.GetApplication</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetApplication</servlet-name>
+    <url-pattern>/get-application</url-pattern>
+  </servlet-mapping>
+ 
+ 
+ <context-param>
+		<param-name>driver</param-name>
+		<param-value>com.mysql.jdbc.Driver</param-value>
+	</context-param>
+	<!-- 配置第二个参数：url -->
+	<context-param>
+		<param-name>url</param-name>
+		<param-value>jdbc:mysql://localhost:3306/test</param-value>
+	</context-param>
+	<!-- 配置第三个参数：user -->
+	<context-param>
+		<param-name>user</param-name>
+		<param-value>root</param-value>
+	</context-param>
+	<!-- 配置第四个参数：pass -->
+	<context-param>
+		<param-name>pass</param-name>
+		<param-value>110120</param-value>
+	</context-param>
+
+
+	<servlet>
+		<!-- 指定Servlet名字 -->
+		<servlet-name>config</servlet-name>
+		<!-- 指定将哪个JSP页面配置成Servlet -->
+		<jsp-file>/2.9/configTest2.jsp</jsp-file>
+		<!-- 配置名为name的参数，值为yeeku -->
+		<init-param>
+			<param-name>name</param-name>
+			<param-value>yeeku</param-value>
+		</init-param>
+		<!-- 配置名为age的参数，值为30 -->
+		<init-param>
+			<param-name>age</param-name>
+			<param-value>30</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<!-- 指定将config Servlet配置到/config URL-->
+		<servlet-name>config</servlet-name>
+		<url-pattern>/2.9/config</url-pattern>
+	</servlet-mapping>
+	
   
 </web-app>
